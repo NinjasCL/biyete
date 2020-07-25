@@ -13,7 +13,7 @@ A simple _Google Apps Script_ to parse _Gmail_ messages related to _Bank Notific
 _Deposits_ and other related areas. Then save those data to a _Google Spreadsheet_ that you could use
 to track your finances.
 
-https://ninjas.cl[image:https://img.shields.io/badge/Ninjas-CL-green.svg?style=flat-square[Ninjas.cl]] https://choosealicense.com/licenses/gpl-3.0/[image:https://img.shields.io/github/license/ninjascl/biyete.svg?style=flat-square[GPL v3]] http://commitizen.github.io/cz-cli/[image:https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square[Commitizen Friendly]] https://standardjs.com[image:https://img.shields.io/badge/code_style-semistandard-brightgreen.svg?style=flat-square[StandardJS]]
+https://ninjas.cl[image:https://img.shields.io/badge/Ninjas-CL-green.svg?style=flat-square[Ninjas.cl]] https://choosealicense.com/licenses/gpl-3.0/[image:https://img.shields.io/github/license/biyete/biyete.svg?style=flat-square[GPL v3]] http://commitizen.github.io/cz-cli/[image:https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square[Commitizen Friendly]] https://standardjs.com[image:https://img.shields.io/badge/code_style-semistandard-brightgreen.svg?style=flat-square[StandardJS]]
 
 toc::[]
 
