@@ -222,6 +222,17 @@ The parser should return an object with the following properties.
 }
 ```
 
+### Creating a Parser
+
+The first thing you need is the base text of the email.
+Is recommended to obtain a text representation of the email.
+You could use "_Show Original_" option to open a text only representation.
+Using that you could create a _regular expression_ to parse the data.
+Is recommended to use https://regex101.com/ for testing your regex.
+
+image:assets/screenshots/gmail2.png[]
+
+
 ### Available Parsers
 
 - https://www.bancoestado.cl[Banco Estado Notifications].
