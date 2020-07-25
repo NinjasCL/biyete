@@ -29,7 +29,7 @@ Please note that by using _GitHub_, you have also agreed to follow the
 https://help.github.com/en/articles/github-terms-of-service#[GitHub Terms of Service] which
 include https://help.github.com/en/articles/github-terms-of-service#3-conduct-restrictions[guidelines on conduct].
 
-## Bug reports
+## Bug reports
 
 If you think you have found a bug in _Biyete_, first make sure that you are testing against the latest version of _Biyete_ (your issue may already have been fixed). If not, search our https://github.com/ninjascl/biyete/issues[issues list] on _GitHub_ in case a similar issue has already been opened.
 
@@ -338,15 +338,12 @@ refactor(content): prefix mdContent scroll- attributes
 
     Change your code from this:
 
-    ```html
     <md-content scroll-x scroll-y scroll-xy>
-    ```
 
     To this:
 
-    ```html
     <md-content md-scroll-x md-scroll-y md-scroll-xy>
-    ```
+
 ```
 
 
