@@ -1,0 +1,14 @@
+name: docker-ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main, production]
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Lint and Test
+
+        run: make github

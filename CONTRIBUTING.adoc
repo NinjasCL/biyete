@@ -1,0 +1,369 @@
+:ext-relative:
+:toc: macro
+:toclevels: 3
+
+# 🤩 Hello and Welcome!
+
+First off, thank you for considering contributing to _Biyete_. It's people like you that make _Biyete_ such a great tool.
+
+Feel welcome and read the following sections in order to know how to ask questions and how to work on something.
+
+All members of our community are expected to follow our _Code of Conduct_. Please make sure you are welcoming and friendly in all of our spaces.
+
+_Biyete_ is a free/libre project and we love to receive contributions from our community — you! There are many ways to contribute, from writing tutorials or blog posts, improving the documentation, submitting bug reports and feature requests or writing code which can be incorporated into _Biyete_ itself.
+
+toc::[]
+
+
+## Please follow these guidelines
+
+Following these guidelines helps to communicate that you respect the time of the developers managing and developing this project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
+
+## Code of Conduct
+
+Be friendly, be kind, be patient, have fun.
+
+More or less in the spirit of https://www.gnu.org/philosophy/kind-communication.html[Kind Communication Guidelines].
+
+Please note that by using _GitHub_, you have also agreed to follow the
+https://help.github.com/en/articles/github-terms-of-service#[GitHub Terms of Service] which
+include https://help.github.com/en/articles/github-terms-of-service#3-conduct-restrictions[guidelines on conduct].
+
+## Bug reports
+
+If you think you have found a bug in _Biyete_, first make sure that you are testing against the latest version of _Biyete_ (your issue may already have been fixed). If not, search our https://github.com/ninjascl/biyete/issues[issues list] on _GitHub_ in case a similar issue has already been opened.
+
+It is very helpful if you can prepare a reproduction of the bug. In other words, provide a small test case which we can run to confirm your bug. It makes it easier to find the problem and to fix it.
+
+Provide as much information as you can. The easier it is for us to recreate your problem, the faster it is likely to be fixed.
+
+## Feature requests
+
+If you find yourself wishing for a feature that doesn't exist in _Biyete_, you are probably not alone. There are bound to be others out there with similar needs.
+Open an issue on our https://github.com/ninjascl/biyete/issues[issues list] on _GitHub_ which describes the feature you would like to see, why you need it, and how it should work.
+
+## Who uses Biyete?
+An updated list of _Biyete_ users is kept on the https://github.com/NinjasCL/biyete/wiki[Github wiki]. Add yourself or your company if you use _Biyete_!.
+
+## Contributing code and documentation changes
+
+*Repository*: https://github.com/ninjascl/biyete
+
+If you would like to contribute a new feature or a bug fix to _Biyete_, please discuss your idea first on the _Github_ issue. If there is no _Github_ issue for your idea, please open one. It may be that somebody is already working on it, or that there are particular complexities that you should know about before starting the implementation. There are often a number of ways to fix a problem and it is important to find the right approach before spending time on a PR that cannot be merged.
+
+We add the _help wanted_ label to existing _Github_ issues for which community contributions are particularly welcome, and we use the _good first issue_ label to mark issues that we think will be suitable for new contributors.
+
+### Our Development Process
+
+We use _GitHub_ to sync code to and from our repository. We'll use _GitHub_
+to track issues and feature requests, as well as accept pull requests.
+
+In summary it can be described as:
+
+. Fork the repo and create your branch from `main` (or another relevant branch).
+. If you've added code that should be tested, add tests.
+. If you've changed APIs, update the documentation.
+. Ensure the test suite passes.
+. Make sure your code lints.
+. If you haven't already, review the _Contributor License Agreement ("CLA")_.
+
+#### https://guides.github.com/introduction/flow/index.html[Github Flow] Strategy
+
+We use https://guides.github.com/introduction/flow/index.html[Github Flow]. So all code changes happen through _Pull Requests_. _Pull Requests_ are the best way to propose changes to the codebase. We actively welcome your _Pull Requests_ (Or _Merge Requests_ for _Gitlab_ terminology fans).
+
+##### Flow
+
+. Create an issue detailing the new feature, fix or other related task.
+. If the task is approved then begin by creating a new branch (off the current _main_ branch or related branch).
+. Create a new _Pull Request_ as soon as possible (to ease visibility and avoiding possible duplicate work with other contributors).
+. Begin sending commits to your branch. These commits does not need to follow _commitizen_ format, as they will be _squashed_ later in a single commit. *Please commit as often as you wish, with any format you want*.
+. Ensure that your code is in sync with the _main_ branch and have no conflicts with the latest version in the repo before the _PR_ approval. Rebase often.
+. Ensure to update the _CHANGELOG_ with your changes.
+. Ensure all your code passes the test suite and includes relevant tests if needed.
+. When the _PR_ is approved then all your commits would be _squashed_. The _squashed_ commit message *must* follow the _commitizen_ format and reference the issue. You can use a final commit that follows the _commitizen_ format so it will become the final commit of the whole _PR_.
+. Your branch will be merged and then deleted.
+
+###### Branch Naming Convention
+
+The branch must follow the format: `<issue number>-<type>/<context>`.
+No spaces, all lowercase, separate words with `-`.
+
+`<type>` must be one of the following:
+
+- *feat*: A new feature
+- *fix*: A bug fix
+- *docs*: Documentation only changes
+- *style*: Changes that do not affect the meaning of the code (white-space, formatting, missing
+  semi-colons, typos, comments, etc)
+- *refactor*: A code change that neither fixes a bug nor adds a feature
+- *perf*: A code change that improves performance
+- *test*: Adding missing tests
+- *chore*: Changes to the build process or auxiliary tools and libraries such as documentation
+  generation
+
+*Example*: `1-docs/bancoestado-purchase-notification-parser`
+
+
+##### Branch: `main`
+
+This is the "_development branch_". Code here may have unexpected bugs and other related goodies
+of a _cutting edge_ version. All bug fixes and new features should be based off this branch.
+
+The version in this branch will be based off the latest production release version (with suffix -dev). And should not change until a new production release is made.
+
+*Example*: `1.0.0-dev`.
+
+
+##### Branch: `production`
+
+This is the "_releases branch_". When code is pushed to this branch it is considered "_production ready_" and a new version is released. This is well tested and stable code. A new tag with a version must be created in order to set the current release.
+
+###### Tag Naming Convention
+
+All tags will follow the format `v<HUMAN>.<MAJOR>.<MINOR>`.
+
+This follows http://blog.legacyteam.info/2015/12/romver-romantic-versioning/[_Romantic Versioning_].
+
+
+- `HUMAN` version when you make any conceptual change, major rewrite, major documentation changes or any other change which requires additional _HUMAN_ involvement.
+
+- `MAJOR` version when you make incompatible API changes.
+
+- `MINOR` version when you add functionality in a backwards-compatible manner, or fix with backwards-compatible bug fixes.
+
+The final version number would be decided at the moment of _release_. It should always be greater than the previous number.
+
+
+#### Fork and clone the repository
+
+You will need to fork the main _Biyete_ repository and clone it to your local machine. See
+https://help.github.com/articles/fork-a-repo[github help page] for help.
+
+Further instructions are given below.
+
+##### Submitting your changes
+
+Once your changes and tests are ready to submit for review.
+
+###### Test your changes
+
+Run the test suite to make sure that nothing is broken.
+
+###### Rebase your changes
+
+Update your local repository with the most recent code from the main _Biyete_ repository, and rebase your branch on top of the latest _main_ branch. We prefer your initial changes to be squashed into a single commit. Later, if we ask you to make changes, add them as separate commits.  This makes them easier to review.  As a final step before merging we will either ask you to squash all commits yourself or we'll do it for you.
+
+
+###### Submit a pull request
+
+Push your local changes to your forked copy of the repository and [submit a pull request](https://help.github.com/articles/using-pull-requests). In the pull request, choose a title which sums up the changes that you have made, and in the body provide more details about what your changes do. Also mention the number of the issue where discussion has taken place, eg "Closes #123".
+
+Then sit back and wait. There will probably be discussion about the pull request and, if any changes are needed, we would love to work with you to get your pull request merged into _Biyete_.
+
+Please adhere to the general guideline that you should never force push
+to a publicly shared branch. Once you have opened your pull request, you
+should consider your branch publicly shared. Instead of force pushing
+you can just add incremental commits; this is generally easier on your
+reviewers. If you need to pick up changes from _main_, you can merge
+_main_ into your branch. A reviewer might ask you to rebase a
+long-running pull request in which case force pushing is okay for that
+request. Note that squashing at the end of the review process should
+also not be done, that can be done when the pull request is [integrated
+via GitHub](https://github.com/blog/2141-squash-your-commits).
+
+#### Contributor License Agreement ("CLA")
+
+In order to accept your pull request, you must agree to this simple _CLA_.
+
+##### Licenses
+
+Unless stated otherwise all the artifacts in this project are under the following licenses.
+All your submissions are understood to be under the same licenses that covers the project.
+
+All documentation and non source code artifacts are under
+
+https://choosealicense.com/licenses/cc-by-sa-4.0/[Creative Commons By SA 4.0]
+
+All source code files are dual licensed
+
+https://choosealicense.com/licenses/gpl-3.0/[GNU General Public License v3.0 (or later)]
+
+and https://choosealicense.com/licenses/mpl-2.0/[Mozilla Public License 2.0]
+
+
+Feel free to contact the maintainers if there is a concern.
+
+#### Original creation
+
+You represent that each of *Your* Contributions is *Your* original creation. You represent that your contribution submissions include complete details of any third-party license or other restriction (including, but not limited to, related patents and trademarks) of which you are personally aware and which are associated with any part of your contributions.
+
+#### Support is optional
+
+You are not expected to provide support for your contributions, except to the extent you desire to provide support. You may provide support for free, for a fee, or not at all.
+
+
+## Styleguides
+
+### JavaScript Styleguide
+
+All JavaScript must adhere to https://standardjs.com/[JavaScript Standard Style] (Semi standard, with semicolons). And use https://prettier.io/[Prettier] for automatic code formatting.
+
+- Prefer the object spread operator (`{...anotherObj}`) to `Object.assign()`
+- Inline `export`s with expressions whenever possible
+  ```js
+  // Use this:
+  export default class ClassName {
+
+  }
+
+  // Instead of:
+  class ClassName {
+
+  }
+  export default ClassName
+  ```
+
+- Place requires in the following order:
+    * Built in Node Modules (such as `path`)
+    * Local Modules (using relative paths)
+
+- Place class properties in the following order:
+    * Class methods and properties (constructor, methods starting with `static`)
+    * Instance methods and properties
+
+
+### General documentation with https://asciidoc.org/[asciidoc]
+
+Any documentation should contain _asciidoc_ syntax for formatting. Generally, you can use any _asciidoc_
+feature.
+
+#### Headings
+
+Only use *h2* headings and lower, as the page title is set in *h1*. Also make sure you follow the
+heading hierarchy. This ensures correct table of contents are created.
+
+#### Code blocks
+
+In line code can be specified by enclosing the code in back-ticks (\`).
+A block of multi-line code can be enclosed in triple back-ticks (```) but it is formatted better
+if it is enclosed in &lt;pre&gt;...&lt;/pre&gt; tags and the code lines themselves are indented.
+
+
+### Git Commit Guidelines
+
+We have very precise rules over how our git commit messages can be formatted. This leads to *more readable messages* that are easy to follow when looking through the project history.
+
+To ease this way of commit messages we use https://github.com/commitizen/cz-cli[Commitizen] and https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines[Angular JS Commit Guidelines] via https://github.com/conventional-changelog/conventional-changelog[Conventional Changelog].
+
+
+#### Commit Message Format
+Each commit message consists of a *header*, a *body* and a *footer*. The header has a special
+format that includes a *type*, a *scope* and a *subject*:
+
+```html
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+
+Any line of the commit message cannot be longer 100 characters!.
+This allows the message to be easier to read on _GitHub_ as well as in various _Git tools_.
+
+##### Type
+Must be one of the following:
+
+- *feat*: A new feature
+- *fix*: A bug fix
+- *docs*: Documentation only changes
+- *style*: Changes that do not affect the meaning of the code (white-space, formatting, missing
+  semi-colons, etc)
+- *refactor*: A code change that neither fixes a bug nor adds a feature
+- *perf*: A code change that improves performance
+- *test*: Adding missing tests
+- *chore*: Changes to the build process or auxiliary tools and libraries such as documentation
+  generation
+
+##### Scope
+The scope could be anything that helps specifying the scope (or feature) that is changing.
+
+Examples
+- select(multiple): 
+- dialog(alert): 
+
+##### Subject
+The subject contains a succinct description of the change:
+
+* use the imperative, present tense: "change" not "changed" nor "changes"
+* don't capitalize first letter
+* no dot (.) at the end
+
+##### Body
+Just as in the *subject*, use the imperative, present tense: "change" not "changed" nor "changes"
+The body should include the motivation for the change and contrast this with previous behavior.
+
+##### Footer
+The footer should contain any information about *Breaking Changes* and is also the place to
+reference GitHub issues that this commit *Closes*, *Fixes*, or *Relates to*.
+
+Breaking Changes are intended to be highlighted in the ChangeLog as changes that will require
+community users to modify their code after updating to a version that contains this commit.
+
+##### Sample Commit messages:
+
+```text
+fix(autocomplete): don't show the menu panel when readonly
+
+this could sometimes happen when no value was selected
+
+Fixes #11231
+```
+
+```text
+feat(chips): trigger ng-change on chip addition/removal
+
+* add test of `ng-change` for `md-chips`
+* add docs regarding `ng-change` for `md-chips` and `md-contact-chips`
+* add demo for ng-change on `md-chips`
+* add demo for ng-change on `md-contact-chips`
+
+Fixes #11161 Fixes #3857
+```
+
+```text
+refactor(content): prefix mdContent scroll- attributes
+
+    BREAKING CHANGE: md-content's `scroll-` attributes are now prefixed with `md-`.
+
+    Change your code from this:
+
+    ```html
+    <md-content scroll-x scroll-y scroll-xy>
+    ```
+
+    To this:
+
+    ```html
+    <md-content md-scroll-x md-scroll-y md-scroll-xy>
+    ```
+```
+
+
+## References
+
+This guide was written based on the following documents:
+
+- https://github.com/nayafia/contributing-template/blob/master/CONTRIBUTING-template.md
+
+- https://raw.githubusercontent.com/elastic/elasticsearch/master/CONTRIBUTING.md
+
+- https://requirejs.org/docs/contributing.html#codestyle
+
+- https://gist.github.com/briandk/3d2e8b3ec8daf5a27a62
+
+- https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines
+
+- https://raw.githubusercontent.com/atom/atom/master/CONTRIBUTING.md
+
+- https://github.com/janl/mustache.js/#contributing

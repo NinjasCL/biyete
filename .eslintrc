@@ -1,0 +1,10 @@
+{
+  "extends": ["standard"],
+  "rules": {
+    "space-before-function-paren": 0,
+    "semi": 0
+  },
+  "env": {
+    "node": true
+  }
+}
