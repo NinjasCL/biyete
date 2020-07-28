@@ -1,0 +1,116 @@
+:ext-relative:
+:toc: macro
+:toclevels: 4
+
+++++
+  <h1 align="center">💵 Biyete 🏦</h1>
+  <p align="center">
+    <img src="https://user-images.githubusercontent.com/292738/87846952-fdb4dd00-c8a1-11ea-8dbe-57f3c43b46c3.png" alt="Perrito Limpio con Signo de Dinero" style="width:30%;height:auto;">
+  </p>
+++++
+
+A simple _Google Apps Script_ to parse _Gmail_ messages related to _Bank Notifications_, _Payment Bills_, 
+_Deposits_ and other related areas. Then save those data to a _Google Spreadsheet_ that you could use
+to track your finances.
+
+https://ninjas.cl[image:https://img.shields.io/badge/Ninjas-CL-green.svg?style=flat-square[Ninjas.cl]] https://choosealicense.com/licenses/gpl-3.0/[image:https://img.shields.io/github/license/biyete/biyete.svg?style=flat-square[GPL v3]] http://commitizen.github.io/cz-cli/[image:https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square[Commitizen Friendly]] https://standardjs.com[image:https://img.shields.io/badge/code_style-semistandard-brightgreen.svg?style=flat-square[StandardJS]]
+
+toc::[]
+
+## 🚀 Environment setup
+
+### Requirements
+
+- https://script.google.com/home[Google Apps Script].
+- https://gmail.com[Gmail].
+- https://docs.google.com/spreadsheets[Google Spreadsheets].
+
+### Quick Installation
+
+#### Step 1 - Configure Gmail
+
+. Configure your _Gmail_ https://support.google.com/mail/answer/6579?hl=en[inbox with filters] for each _Parser_, that would assign specific *labels*.
+. Ensure that you have some unread emails with the assigned _label_.
+
+Each parser will have a designated _label_ that you must configure first
+in your _Gmail_ account
+This is the way to determine which _Parser_ will be used to extract the data.
+
+It's recommended to use a parent label named `biyete` to organize better your emails and labels related to _biyete_. *Labels must follow specific format in order to work*.
+
+See each _parser_ _Labels.js_ file to know how to name your labels.
+
+image:assets/screenshots/gmail.png[Gmail Labels]
+
+*Important*: Be sure to create a good filter. Unwanted email may cause clutter.
+
+#### Step 2 - Create Spreadsheet
+
+You can use the following link:assets/sheets/simple.xlsx{ext-relative}[Example Sheet].
+
+. Clone it to your _Google Drive_.
+. Remove sample data.
+. Replace the url inside link:dist/biyete.gs{ext-relative}[_biyete.gs_]. (_"sheetURL"_ constant).
+
+#### Step 3 - Configure Google Apps Script
+
+. Create a new project in https://script.google.com/home/my[_Google Apps Script_].
+. Upload the (already configured) code inside link:dist/biyete.gs{ext-relative}[_biyete.gs_].
+. Enable https://developers.google.com/apps-script/guides/services/advanced#enabling_advanced_services[Advanced Services] (_Gmail_ and _Spreadsheets_).
+. Save and run (Need to give permissions first).
+. Configure a https://developers.google.com/apps-script/guides/triggers/installable[Time-driven trigger] to execute your custom script periodically.
+
+##### (Optional) Script Config
+
+. Configure parsers and actions (Select custom behaviours).
+. Compile a custom version.
+. Upload following step 3.
+
+###### Selecting Parsers and Actions
+
+For creating your custom selection of _Parsers_ and _Actions_ you just need to configure
+_Parsers_ and _Actions_. import the ones you will need and recompile the script.
+
+
+## 👩‍💻 Project explanation
+
+This project was inspired by https://github.com/arecker/bennedetto[Bennedetto] and the lack of
+proper apps and technologies in Chilean banking systems. Also to automate financial tracking, 
+and helping people organize their finances better.
+
+Following https://bartwronski.com/2016/06/26/technical-weight/[Bart Wronski's advice] we look
+for simpler solutions and try to achieve the goals with the least technical weight. Normally a solution
+would be a huge app with lots of endpoints, https://en.wikipedia.org/wiki/Extract,_transform,_load[ETLs] and so on.
+
+We tried to minimize using the available tools:
+
+- Banks normally do not have open endpoints to fetch data. But they send emails every time you purchase something or when you receive a deposit. These emails could be parsed with simple regex and sent to another place. Also other entities ("Netflix", "Spotify", etc) send a billing email that could also be parsed.
+
+- _Gmail_ has _Google Apps Scripts_ that let you read, program and control emails and interact with different services.
+
+- _Google Spreadsheets_ is a wonderful place to store data and create custom dashboards. Also has _Google Apps Scripts_.
+
+- Finances need to be secure and transparent. So using _Gmail_ and _Spreadsheets_ we can have an easy to use, easy to configure, low cost and secure environment to execute this script and let you have total control over your personal data (No hidden nasties).
+
+### How does it work?
+
+This script will fetch all the unread emails within a specific _label_. Will search for the special keywords and process their data. Then for every item found it will trigger actions. The default action is to store the results inside a specific _SpreadSheet_. Although you could configure new actions (Like sending the data to a REST API or similar). Finally the email will be marked as read.
+
+Normally will process _30 threads_ of messages per execution. (_Google Apps Scripts_ max time is 6 minutes).
+
+image:https://user-images.githubusercontent.com/292738/87862933-70b26800-c923-11ea-9b0a-275ed636267a.png[Main Sequence Diagram]
+
+## 🤩 Credits
+
+++++
+<p>
+  Dog Icon made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+</p>
+
+<p>
+  Made with <i class="fa fa-heart">&#9829;</i> by 
+  <a href="https://ninjas.cl">
+    Ninjas.cl
+  </a>.
+</p>
+++++

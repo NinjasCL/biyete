@@ -1,0 +1,76 @@
+{
+  "name": "gmail-biyete",
+  "description": "A Google Apps Script to parse notifications and other emails and add them to a Google Spreadsheet.",
+  "author": {
+    "name": "Camilo Castro",
+    "email": "camilo@ninjas.cl",
+    "url": "https://ninjas.cl"
+  },
+  "version": "1.0.0-dev",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "start": "npm run watch",
+    "build": "microbundle -i main.js -o dist/biyete.gs.js -f modern --no-sourcemap --strict --no-compress",
+    "watch": "microbundle -i main.js -o dist/biyete.gs.js -f modern --no-sourcemap --strict --no-compress --watch",
+    "lint": "standardx",
+    "lint:fix": "standardx --fix",
+    "jest": "cross-env BABEL_ENV=test jest",
+    "test": "npm run lint:fix && cross-env BABEL_ENV=test jest --silent",
+    "commit": "git-cz"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.10.5",
+    "@babel/plugin-transform-modules-commonjs": "7.10.4",
+    "cross-env": "7.0.2",
+    "cz-conventional-changelog": "3.2.0",
+    "git-cz": "4.7.0",
+    "jest": "26.1.0",
+    "microbundle": "0.12.3",
+    "standardx": "5.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog",
+      "disableEmoji": true
+    }
+  },
+  "standardx": {
+    "globals": [
+      "GmailApp",
+      "SpreadsheetApp",
+      "UrlFetchApp",
+      "expect",
+      "test",
+      "describe",
+      "it"
+    ],
+    "ignore": [
+      "**/dist/",
+      "**/assets/",
+      "**/*.min.js",
+      "coverage/**",
+      "node_modules/**",
+      "vendor/**"
+    ],
+    "envs": [
+      "jest"
+    ]
+  }
+}

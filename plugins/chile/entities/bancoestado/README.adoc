@@ -1,0 +1,15 @@
+# Banco Estado Parser
+
+Use this parser when you would like to scrap data from https://www.bancoestado.cl emails.
+
+## Available Labels
+
+Use these labels in your _Gmail_ to trigger the parsers.
+
+### expense-bancoestado:purchase-notifications
+
+Parses the email sent everytime you made a purchase.
+
+- label: `expense-bancoestado:purchase-notifications`.
+- name: `Banco Estado Purchase Notification Parser`.
+
