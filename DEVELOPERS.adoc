@@ -152,7 +152,7 @@ export default [SpreadSheetAction];
 
 - _SpreadSheetAction.js_: Save data to a specific _Google Spreadsheet_.
 
-- _HttAction_: Call an http endpoint with the parsed data.
+- _HttpAction_: Call an http endpoint with the parsed data.
 
 
 ## Parsers
