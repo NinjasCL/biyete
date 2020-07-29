@@ -44,6 +44,12 @@ image:assets/screenshots/gmail.png[Gmail Labels]
 
 *Important*: Be sure to create a good filter. Unwanted email may cause clutter.
 
+##### Pro Tip
+
+If you want to create filters more easily you can use the plus sign `+` to create an unique email address for each entity.
+
+For example if you got a _Netflix_ account, you can use `example+netflix@gmail.com` as your account email address. Its the same as writting `example@gmail.com`. _Gmail_ ommits everything after the `+`. For _Netflix_ it will be a valid and unique email address. For you, it means that now you can filter all emails that went to `example+netflix@gmail.com` they all will be from _Netflix_.
+
 #### Step 2 - Create Spreadsheet
 
 You can use the following link:assets/sheets/simple.xlsx{ext-relative}[Example Sheet].
